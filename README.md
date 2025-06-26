@@ -1,85 +1,70 @@
-Chingu - iOS Social Event Finder
+# Chingu
 
-Chingu is a prototype for an iOS mobile application designed to help university students discover, create, and join local campus events. The goal is to foster a stronger campus community by connecting students through shared interests and real-world activities.
+Chingu is an iOS application designed to help university students discover, create, and join local campus events. It provides a platform for event creation, participation, and communication among attendees, with the goal of fostering a vibrant and connected campus community.
 
-This repository contains the complete front-end prototype built with SwiftUI.
+---
 
-Features
+## Features
 
-This prototype demonstrates a wide range of front-end features and modern UI/UX patterns:
+- **Event Discovery**: Browse a dynamic feed of campus events, with filtering by category and sorting by date, popularity, or capacity.
+- **User-Created Events**: A dedicated form allows any user to create and post their own events to the community.
+- **Event Details & Participation**: View a detailed page for each event and a 'Join' button to show intent.
+- **Mock Chat System**: A complete UI for both a list of active chats and a detailed, real-time-like conversation screen with styled message bubbles.
+- **User Authentication UI**: Front-end flow for user sign-up and login, featuring an animated success confirmation.
+- **Modern UI/UX**: Includes an animated splash screen, full Dark Mode support, and fluid, responsive animations for page transitions.
 
-User Sign-Up & Sign-In: A complete UI flow for new and returning user authentication.
+---
 
-Animated Splash Screen: A welcoming launch screen that establishes the app's brand.
+## Tech Stack
 
-Dynamic Event Feed: A scrollable list of campus events with a featured "Trending" section.
+- **Platform**: iOS
+- **Language**: Swift
+- **UI Framework**: SwiftUI
+- **IDE**: Xcode
 
-Filtering & Sorting: Users can filter events by category (e.g., "Sports", "Study Group") and sort them by date, popularity, or capacity.
+---
 
-Event Detail Page: A dedicated screen showing detailed information for a selected event.
+## Project Structure
 
-Mock Chat System: A complete UI for a list of chat rooms and a detailed chat view with styled message bubbles.
+The Xcode project is organized logically into groups based on component function to ensure code clarity and maintainability:
 
-Event Creation Form: A full-featured form for users to create and post their own events.
+- `App`: Contains the main application entry point and lifecycle management.
+- `Views`: Major, full-screen views that represent the different pages of the app (e.g., `EventsFeedPage`, `ChatDetailPage`).
+- `Components`: Smaller, reusable UI pieces that are used across multiple views (e.g., `EventCard`, `Header`).
+- `Models`: The data structures that define the shape of the app's data (e.g., `Event`, `User`, `Chat`).
+- `Extensions`: Swift extensions that add custom functionality to existing types, such as custom colors.
 
-Dark Mode Support: The entire UI is fully compatible with both light and dark modes.
+---
 
-Interactive UI Animations:
+## Getting Started
 
-Success Confirmation: A delightful animation on the sign-in button that confirms a successful login.
+This project is a self-contained front-end prototype that can be run directly in the Xcode simulator.
 
-Smooth Transitions: Custom page transitions that make the app feel fluid and responsive.
+### Prerequisites
+- A Mac computer with macOS (Ventura 13.0 or newer recommended).
+- Xcode (version 15.0 or newer recommended).
 
-Technologies & Concepts
+### Running the Application
 
-This project is built entirely with modern Apple technologies and showcases several key concepts:
+1.  **Clone the Repository**
+    ```bash
+    git clone <your-repository-url>
+    cd Chingu
+    ```
 
-SwiftUI: The core declarative UI framework used for building the entire application.
+2.  **Open in Xcode**
+    Navigate to the cloned project folder and double-click the **`Chingu.xcodeproj`** file to open it.
 
-Swift: The programming language used.
+3.  **Build and Run**
+    Once the project is open, select an iOS Simulator from the target menu (e.g., "iPhone 15 Pro") and press the **Run** button (or `Cmd + R`).
 
-Xcode: The project is built and managed using Xcode 15 or newer.
+---
 
-MVVM-like Architecture: The code is organized by its purpose, separating Views, Models, and other components for clarity and maintainability.
+## Future Development
 
-State Management: Utilizes SwiftUI's built-in state management tools (@State, @Binding) to create a responsive and interactive UI.
+This prototype serves as the complete visual and interactive foundation for the app. The next phase of development would focus on building and integrating a backend service to:
 
-Front-End Prototype: This project is currently a front-end prototype. It does not connect to a live backend server and uses mock data for display.
-
-
-Getting Started
-To run this project on your local machine, you will need a Mac with Xcode installed.
-
-Prerequisites
-macOS (Ventura 13.0 or newer recommended)
-
-Xcode (version 15.0 or newer recommended)
-
-How to Run
-Clone the Repository
-
-Bash
-
-git clone https://github.com/Dkim0911/Chingu.git
-cd Chingu
-Open in Xcode
-Navigate to the project folder and double-click the Chingu.xcodeproj file. This will open the project in Xcode.
-
-Build and Run
-
-At the top of the Xcode window, select an iOS Simulator you'd like to use (e.g., "iPhone 15 Pro").
-
-Press the "Play" button (or use the shortcut Cmd + R) to build and run the application. The simulator will launch and you will see the Chingu app.
-
-Future Work & Next Steps
-This prototype lays the foundation for a full-featured application. The next major steps would involve:
-
-Backend Integration: Connecting the front-end UI to a live backend API (like the Go server from the example) to handle:
-
-Real user authentication.
-
-Fetching and posting live event data.
-
-Real-Time Chat: Implementing WebSockets or using a service like Firebase to enable live, real-time messaging between users.
-
-Data Persistence: Storing user information, event RSVPs, and chat history in a remote database.
+- **Implement a real REST API** to handle live data for users, events, and messages.
+- **Add a database** (e.g., PostgreSQL, MongoDB) for persistent data storage.
+- **Enable a real-time chat service** using WebSockets or a service like Firebase.
+- **Connect the front-end app** to this backend to replace the current mock data with live data.
